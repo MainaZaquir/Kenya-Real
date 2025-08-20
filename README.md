@@ -61,7 +61,7 @@ Unlike generic listing sites, KenyaReal helps users find **not just a home, but 
 
 ## 🛠️ Getting Started  
 
-
+```bash
 # Clone the repo
 git clone https://github.com/your-username/kenya-real.git
 
@@ -71,7 +71,7 @@ npm install (make sure you have npm installed on your machine).
 
 # Start development server
 npm run dev
-
+```
 ---
 
 ## Usage
@@ -84,7 +84,6 @@ npm run dev
 
 ### 4. Explore properties on the interactive map and discover nearby amenities.
 
----
 
 ## Roadmap
 
@@ -98,19 +97,16 @@ npm run dev
 
 ### 5. Smart property recommendations
 
----
 
 ## Credits
 
 - This application was created by [Maina Zaquir](https://github.com/MainaZaquir).
 
----
 
 ## Contributing
 
 - Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request.
 
----
 
 ## License
 
