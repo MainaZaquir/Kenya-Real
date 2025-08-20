@@ -1,7 +1,7 @@
 # 🏡 KenyaReal – Modern Real Estate Platform for Kenya  
 
 KenyaReal is a **next-gen real estate web application** built specifically for the Kenyan market.  
-It bridges the trust gap in local property platforms by focusing on **verified agents, affordability, and rich neighborhood insights** — all wrapped in a **mobile-first, PWA experience**.  
+It bridges the trust gap in local property platforms by focusing on **verified agents, affordability, and rich neighborhood insights**. 
 
 Unlike generic listing sites, KenyaReal helps users find **not just a home, but the right home.**  
 
@@ -76,38 +76,31 @@ npm run dev
 
 ## Usage
 
-### 1. Use filters to refine searches by location, budget, and property type.
-
-### 2. Save and compare listings in your account.
-
-### 3. Contact verified agents securely via WhatsApp or email.
-
-### 4. Explore properties on the interactive map and discover nearby amenities.
-
+1. Use filters to refine searches by location, budget, and property type.
+2. Save and compare listings in your account.
+3. Contact verified agents securely via WhatsApp or email.
+4. Explore properties on the interactive map and discover nearby amenities.
 
 ## Roadmap
 
-### 1. Implement price heatmaps
+1. Implement price heatmaps
+2. Add mortgage calculator
+3. Enable 3D virtual tours
+4. Progressive Web App support
+5. Smart property recommendations
 
-### 2. Add mortgage calculator
-
-### 3. Enable 3D virtual tours
-
-### 4. Progressive Web App support
-
-### 5. Smart property recommendations
-
+---
 
 ## Credits
 
-- This application was created by [Maina Zaquir](https://github.com/MainaZaquir).
+> This application was created by [Maina Zaquir](https://github.com/MainaZaquir).
 
 
 ## Contributing
 
-- Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request.
+> Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request.
 
 
 ## License
 
-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+> This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
