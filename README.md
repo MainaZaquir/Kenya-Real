@@ -61,7 +61,7 @@ Unlike generic listing sites, KenyaReal helps users find **not just a home, but 
 
 ## 🛠️ Getting Started  
 
-```bash
+
 # Clone the repo
 git clone https://github.com/your-username/kenya-real.git
 
