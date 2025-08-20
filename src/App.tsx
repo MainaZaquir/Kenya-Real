@@ -7,7 +7,7 @@ import { AgentsPage } from './pages/AgentsPage';
 import { MarketInsightsPage } from './pages/MarketInsightsPage';
 import { ToolsPage } from './pages/ToolsPage';
 import { PropertyDetail } from './components/properties/PropertyDetail';
-import { usePageTracking } from './hooks/usePagetracking';
+import usePageTracking from './hooks/usePageTracking';
 
 function App() {
   usePageTracking();
