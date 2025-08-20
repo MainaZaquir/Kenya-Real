@@ -72,36 +72,45 @@ npm install (make sure you have npm installed on your machine).
 # Start development server
 npm run dev
 
+---
 
 ## Usage
 
-- Use filters to refine searches by location, budget, and property type.
+### 1. Use filters to refine searches by location, budget, and property type.
 
-- Save and compare listings in your account.
+### 2. Save and compare listings in your account.
 
-- Contact verified agents securely via WhatsApp or email.
+### 3. Contact verified agents securely via WhatsApp or email.
 
-- Explore properties on the interactive map and discover nearby amenities.
+### 4. Explore properties on the interactive map and discover nearby amenities.
+
+---
 
 ## Roadmap
 
--  Implement price heatmaps
+### 1. Implement price heatmaps
 
--  Add mortgage calculator
+### 2. Add mortgage calculator
 
--  Enable 3D virtual tours
+### 3. Enable 3D virtual tours
 
--  Progressive Web App support
+### 4. Progressive Web App support
 
--  Smart property recommendations
+### 5. Smart property recommendations
+
+---
 
 ## Credits
 
 - This application was created by [Maina Zaquir](https://github.com/MainaZaquir).
 
+---
+
 ## Contributing
 
 - Contributions are welcome! If you find any issues or want to suggest improvements, feel free to open an issue or submit a pull request.
+
+---
 
 ## License
 
