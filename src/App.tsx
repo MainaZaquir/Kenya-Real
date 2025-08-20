@@ -8,9 +8,11 @@ import { MarketInsightsPage } from './pages/MarketInsightsPage';
 import { ToolsPage } from './pages/ToolsPage';
 import { PropertyDetail } from './components/properties/PropertyDetail';
 import usePageTracking from './hooks/usePageTracking';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   usePageTracking();
+
   return (
     <Router>
       <div className="min-h-screen bg-white">
@@ -24,6 +26,8 @@ function App() {
           <Route path="/tools" element={<ToolsPage />} />
         </Routes>
         <Footer />
+
+        <Analytics />
       </div>
     </Router>
   );
