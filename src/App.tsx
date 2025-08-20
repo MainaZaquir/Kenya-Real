@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -8,8 +7,10 @@ import { AgentsPage } from './pages/AgentsPage';
 import { MarketInsightsPage } from './pages/MarketInsightsPage';
 import { ToolsPage } from './pages/ToolsPage';
 import { PropertyDetail } from './components/properties/PropertyDetail';
+import { usePageTracking } from './hooks/usePagetracking';
 
 function App() {
+  usePageTracking();
   return (
     <Router>
       <div className="min-h-screen bg-white">
