@@ -140,6 +140,7 @@ export const PropertyFilters: React.FC<PropertyFiltersProps> = ({
           <Button
             variant="outline"
             size="sm"
+            className="justify-start"
             onClick={() => {
               handleFilterChange('priceMin', 0);
               handleFilterChange('priceMax', 1000000);
@@ -150,6 +151,7 @@ export const PropertyFilters: React.FC<PropertyFiltersProps> = ({
           <Button
             variant="outline"
             size="sm"
+            className="justify-start"
             onClick={() => {
               handleFilterChange('priceMin', 1000000);
               handleFilterChange('priceMax', 3000000);
@@ -160,6 +162,7 @@ export const PropertyFilters: React.FC<PropertyFiltersProps> = ({
           <Button
             variant="outline"
             size="sm"
+            className="justify-start"
             onClick={() => {
               handleFilterChange('priceMin', 3000000);
               handleFilterChange('priceMax', 5000000);
@@ -170,6 +173,7 @@ export const PropertyFilters: React.FC<PropertyFiltersProps> = ({
           <Button
             variant="outline"
             size="sm"
+            className="justify-start"
             onClick={() => {
               handleFilterChange('priceMin', 5000000);
               handleFilterChange('priceMax', 0);

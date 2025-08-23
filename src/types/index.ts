@@ -81,3 +81,23 @@ export interface MarketInsight {
     security: number;
   };
 }
+
+export type Role = 'buyer' | 'agent' | 'admin';
+
+export interface UserPreferences {
+  maxPrice: number;
+  minBedrooms: number;
+  preferredAreas: string[];
+  propertyTypes: string[];
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatar: string;
+  role: Role;
+  savedProperties: string[];
+  preferences: UserPreferences;
+}

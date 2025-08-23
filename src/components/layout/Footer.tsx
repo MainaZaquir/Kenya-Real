@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} KenyaReal. All rights reserved. Built by Maina Zakir.
+            © {new Date().getFullYear()} KenyaReal. All rights reserved. Built with ❤️ by CoreDigital.
           </p>
         </div>
       </div>

@@ -30,15 +30,19 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     navigate(`/properties/${property.id}`);
   };
 
-  // Wrappers to prevent event bubbling
-  const handleWhatsAppClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     handleWhatsAppContact();
   };
 
-  const handleEmailClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleEmailClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     handleEmailContact();
+  };
+
+  const handleSaveClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Handle save functionality
   };
 
   return (
@@ -62,7 +66,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           </Badge>
         </div>
         <button
-          onClick={(e) => e.stopPropagation()}
+          onClick={handleSaveClick}
           className="absolute top-4 right-4 p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
         >
           <Heart className="w-4 h-4 text-gray-600 hover:text-red-500" />
@@ -91,60 +95,81 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </div>
 
         {/* Property Details */}
-        <div className="flex items-center space-x-3 text-sm text-gray-500">
+        <div className="flex items-center space-x-4 text-sm text-gray-500">
           {property.bedrooms > 0 && (
             <div className="flex items-center space-x-1">
-              <Bed className="w-3 h-3" />
+              <Bed className="w-4 h-4" />
               <span>{property.bedrooms}</span>
             </div>
           )}
           <div className="flex items-center space-x-1">
-            <Bath className="w-3 h-3" />
+            <Bath className="w-4 h-4" />
             <span>{property.bathrooms}</span>
           </div>
           <div className="flex items-center space-x-1">
-            <Square className="w-3 h-3" />
+            <Square className="w-4 h-4" />
             <span>{formatArea(property.area)}</span>
           </div>
         </div>
 
         {/* Agent Info */}
-        <div className="flex items-center justify-between pt-3 border-t">
+        <div className="flex items-center justify-between pt-4 border-t">
           <div className="flex items-center space-x-2">
             <img
               src={property.agent.avatar}
               alt={property.agent.name}
-              className="w-8 h-8 rounded-full object-cover"
+              className="w-10 h-10 rounded-full object-cover"
             />
             <div>
               <div className="flex items-center space-x-1">
                 <span className="font-medium text-gray-900 text-sm">{property.agent.name}</span>
                 {property.agent.verified && (
-                  <Shield className="w-3 h-3 text-emerald-600" />
+                  <Shield className="w-4 h-4 text-emerald-600" />
                 )}
               </div>
               <div className="flex items-center space-x-1 text-xs text-gray-500">
-                <Star className="w-2 h-2 text-yellow-400 fill-current" />
+                <Star className="w-3 h-3 text-yellow-400 fill-current" />
                 <span>{property.agent.rating}</span>
               </div>
             </div>
           </div>
-          <div className="flex space-x-1">
+          <div className="flex space-x-2">
             <button
               onClick={handleWhatsAppClick}
-              className="p-1.5 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+              className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
               title="WhatsApp"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-5 h-5" />
             </button>
             <button
               onClick={handleEmailClick}
-              className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
               title="Email"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-5 h-5" />
             </button>
           </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="grid grid-cols-2 gap-3 pt-4">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleWhatsAppClick}
+          >
+            <MessageCircle className="w-4 h-4 mr-1" />
+            Contact
+          </Button>
+          <Button
+            size="sm"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleViewDetails();
+            }}
+          >
+            View Details
+          </Button>
         </div>
       </div>
     </div>

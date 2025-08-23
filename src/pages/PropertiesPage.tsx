@@ -26,7 +26,10 @@ export const PropertiesPage: React.FC = () => {
     if (filters.query && !property.title.toLowerCase().includes(filters.query.toLowerCase())) {
       return false;
     }
-    if (filters.location && !property.location.area.toLowerCase().includes(filters.location.toLowerCase())) {
+    if (filters.location && filters.location !== 'nairobi' && !property.location.area.toLowerCase().includes(filters.location.toLowerCase())) {
+      return false;
+    }
+    if (filters.location === 'nairobi' && !property.location.county.toLowerCase().includes('nairobi')) {
       return false;
     }
     if (filters.propertyType && property.type !== filters.propertyType) {
@@ -45,6 +48,19 @@ export const PropertiesPage: React.FC = () => {
       return false;
     }
     return true;
+  });
+
+  const sortedProperties = [...filteredProperties].sort((a, b) => {
+    switch (filters.sortBy) {
+      case 'price-low':
+        return a.price - b.price;
+      case 'price-high':
+        return b.price - a.price;
+      case 'newest':
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      default:
+        return 0;
+    }
   });
 
   return (
@@ -134,21 +150,36 @@ export const PropertiesPage: React.FC = () => {
             {/* Properties Grid */}
             {viewMode === 'grid' ? (
               <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProperties.map((property) => (
+                {sortedProperties.map((property) => (
                   <PropertyCard key={property.id} property={property} />
                 ))}
               </div>
             ) : (
-              <PropertyMap properties={filteredProperties} />
+              <PropertyMap properties={sortedProperties} />
             )}
 
-            {filteredProperties.length === 0 && (
+            {sortedProperties.length === 0 && (
               <div className="text-center py-12">
                 <div className="text-gray-400 mb-4">
                   <Search className="w-12 h-12 mx-auto" />
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">No properties found</h3>
                 <p className="text-gray-600">Try adjusting your search criteria</p>
+                <Button 
+                  className="mt-4"
+                  onClick={() => setFilters({
+                    query: '',
+                    location: '',
+                    priceMin: 0,
+                    priceMax: 0,
+                    propertyType: '',
+                    bedrooms: 0,
+                    status: 'all',
+                    sortBy: 'newest'
+                  })}
+                >
+                  Clear Filters
+                </Button>
               </div>
             )}
           </div>

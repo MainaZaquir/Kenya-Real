@@ -24,7 +24,9 @@ export const PropertyMap: React.FC<PropertyMapProps> = ({
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="p-6 border-b">
         <h3 className="text-xl font-semibold text-gray-900 mb-2">Location & Nearby</h3>
-        <p className="text-gray-600">Interactive map with neighborhood insights</p>
+        <p className="text-gray-600">
+          Interactive map with neighborhood insights ({properties.length} properties shown)
+        </p>
       </div>
       
       {/* Map Placeholder */}
@@ -38,20 +40,27 @@ export const PropertyMap: React.FC<PropertyMapProps> = ({
               <div className="text-sm text-gray-600 mb-2">Current Location:</div>
               <div className="font-medium text-gray-900">Westlands, Nairobi</div>
               <div className="text-sm text-gray-500">Coordinates: {center[0]}, {center[1]}</div>
+              <div className="text-sm text-gray-500 mt-2">
+                Properties: {properties.length}
+              </div>
             </div>
           </div>
         </div>
         
         {/* Mock Property Pins */}
-        <div className="absolute top-20 left-32 w-6 h-6 bg-orange-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
-          <div className="w-2 h-2 bg-white rounded-full"></div>
-        </div>
-        <div className="absolute top-40 right-40 w-6 h-6 bg-emerald-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
-          <div className="w-2 h-2 bg-white rounded-full"></div>
-        </div>
-        <div className="absolute bottom-32 left-20 w-6 h-6 bg-blue-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
-          <div className="w-2 h-2 bg-white rounded-full"></div>
-        </div>
+        {properties.slice(0, 3).map((property, index) => (
+          <div 
+            key={property.id}
+            className={`absolute w-6 h-6 rounded-full border-2 border-white shadow-lg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform ${
+              index === 0 ? 'top-20 left-32 bg-orange-600' :
+              index === 1 ? 'top-40 right-40 bg-emerald-600' :
+              'bottom-32 left-20 bg-blue-600'
+            }`}
+            title={property.title}
+          >
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+          </div>
+        ))}
       </div>
       
       {/* Nearby Amenities */}

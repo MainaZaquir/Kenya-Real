@@ -33,7 +33,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, showFilters = tr
       if (priceRange) params.set('price', priceRange);
       if (propertyType) params.set('type', propertyType);
       
-      navigate(`/properties?${params.toString()}`);
+      const queryString = params.toString();
+      navigate(queryString ? `/properties?${queryString}` : '/properties');
     }
   };
 
@@ -64,6 +65,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, showFilters = tr
             <option value="karen">Karen</option>
             <option value="westlands">Westlands</option>
             <option value="upper-hill">Upper Hill</option>
+            <option value="kiambu">Kiambu</option>
+            <option value="machakos">Machakos</option>
             <option value="mombasa">Mombasa</option>
             <option value="kisumu">Kisumu</option>
             <option value="nakuru">Nakuru</option>
